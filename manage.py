@@ -4,6 +4,7 @@ import os
 import sys
 
 #soy joto
+#Soy joto Parte 2
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proyecto.settings')
