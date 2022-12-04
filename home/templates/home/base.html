@@ -19,55 +19,33 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Librerías el Pollón</a>
+                <a class="navbar-brand" href="{% url 'page-home' %}">Librerías el Pollón</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Sesión</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
-                            </ul>
-                        </li>
+                        
                     </ul>
-            <!--Barra de busqueda-->        
-            <div class="search-bar">
-                <form class="search-form d-flex align-items-center" method="POST" action="#">
-                    <input type="text" name="query" placeholder="Búsqueda" title="Introduzca libro a buscar">
-                    <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-                </form>
-            </div><!-- End Search Bar -->
-                        <form class="d-flex">
-                            <button class="btn btn-outline-dark" type="submit">
-                                <i class="bi-cart-fill me-1"></i>
-                                Carrito
-                                <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                            </button>
-                        </form>
-                    </div>
+                    <form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Carrito
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                        <button class="btn btn-outline-dark nav-item dropdown" type="button">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sesión</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'registro' %}">Registrarse</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="{% url 'inicio-sesion' %}">Iniciar Sesión</a></li>
+                            </ul>
+                        </button>
+                    </form>
                 </div>
+            </div>
         </nav>
-        <!-- Header-->
-        <header class="bg-dark py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
-                </div>
-            </div>
-        </header>
-        <section class="py-5">
-            <div class="container px-4 px-lg-5 mt-5">
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                    {% block content %}{% endblock %}
-                </div> 
-            </div>
-        </section>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
